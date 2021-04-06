@@ -1,11 +1,24 @@
 def my_each(array)
-  num = 1
+  index = 0
   
-  while num < 5
-    yield array
-      num += 1
+  while index < array.length
+    yield array[index]
+      index += 1
   end
 end
 
 
 
+def hello_t(array)
+  if block_given?
+    i = 0
+  
+    while i < array.length
+      yield array[i]
+      i = i + 1
+    end
+    array
+  else
+    puts "Hey! No block was given!"
+  end
+end
